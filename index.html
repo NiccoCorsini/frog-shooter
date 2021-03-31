@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Frog Shooter</title>
+</head>
+<body>
+
+    <!-- TITLE + AUDIO CONTROL MODULE -->
+    <div class="title">
+        <h1>FROG SHOOTER</h1>
+        <div class="volume-controller">
+
+            <div id="volume-up" class="volume-up">
+                <i class="fas fa-volume-up"></i>
+            </div>
+
+            <div id="volume-down" class="volume-down">
+                <i class="fas fa-volume-mute"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- START GAME -->
+    <button id="start-game" onclick="game();">START</button>
+
+    <!-- GAME OVER -->
+    <section id="perso">
+
+        <div class="sergente">
+            <img src="./img/Sgt.Hartman.png" alt="Hartman">           
+            <button id="btn">RIPROVA!</button>
+        </div>
+
+        <h2>GAME OVER</h2>
+
+    </section>
+
+    <!-- YOU ARE THE WINNER -->
+    <section id="vinto" class="vinto">
+
+        <h2>YOU ARE THE WINNER!</h2>
+        <br>
+        <img src="./img/giphy.gif" alt="winner">
+
+    </section>
+
+    <!-- GAME ARENA -->
+    <section id="arena">
+
+        <div class="frog-container">
+
+            <div class="frog a"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog b"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog a"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog b"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog a"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog b"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog a"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            <div class="frog b"><img src="./img/blood.png" alt="blood" class="bloods"><img class="frogs" src="./img/frog.png" alt="frog"></div>
+            
+        </div>
+
+        <!-- YOUR SCORE + WEAPON -->
+        <div class="shooter-score">
+
+            <div class="score">
+                <h4>Your score: <span id="score">0</span></h4>
+            </div>
+
+            <div class="shooter">
+                <div id="ammo" class="ammo">
+
+                    <div class="animate" id="proiettile"></div>
+                    <img src="./img/carro.png" alt="carro">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="audio-files">
+
+        <audio id="shot">
+            <source src="./sounds/esm_8bit_explosion_bomb_boom_blast_cannon_retro_old_school_classic_cartoon.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="hartman">
+            <source src="./sounds/hartman.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="porn">
+            <source src="./sounds/i'm black i'm porn.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="ahia">
+            <source src="./sounds/ahia.mp3" type="audio/mp3">
+        </audio>
+
+    </div>
+
+    <!-- JS -->
+    <script src="./js/shooter.js"></script>
+    
+</body>
+</html>
